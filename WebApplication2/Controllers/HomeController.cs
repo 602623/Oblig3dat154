@@ -1,5 +1,6 @@
 ﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
+using WebApplication2.Context;
 using WebApplication2.Models;
 
 namespace WebApplication2.Controllers;
@@ -13,8 +14,17 @@ public class HomeController : Controller
         _logger = logger;
     }
 
+    public IActionResult Students(String value)
+    {
+        using MyDbContext ctx = new();
+        var studenter = ctx.student.Where(s => s.studentname.Contains(value)).ToList();
+        ViewData["studenter"] = studenter;
+        return View();
+
+    }
     public IActionResult Index()
     {
+        
         return View();
     }
 

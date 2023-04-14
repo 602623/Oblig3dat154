@@ -1,0 +1,14 @@
+﻿@using System.Collections
+@using WebApplication2.Model
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">noe</h1>
+    @foreach(var student in ViewData["studenter"] as IEnumerable<student>)
+    {
+        <p>@student.studentname</p>
+    }
+    studentsearch view
+</div>

@@ -8,16 +8,18 @@ namespace WebApplication2.Context;
 
 public partial class MyDbContext : DbContext
 {
-    public MyDbContext(DbContextOptions<MyDbContext> options)
-        : base(options)
-    {
-    }
 
     public virtual DbSet<course> course { get; set; }
 
     public virtual DbSet<grade> grade { get; set; }
 
     public virtual DbSet<student> student { get; set; }
+
+    protected override void OnConfiguring(DbContextOptionsBuilder builder)
+    {
+        builder.UseSqlServer(
+            "data source=dat154demo.database.windows.net;Initial Catalog=dat154;User ID=dat154_rw;Password=Svart_Katt;");
+    }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
