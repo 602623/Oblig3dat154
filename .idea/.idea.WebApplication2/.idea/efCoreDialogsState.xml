@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="EfCoreDialogsState">
+    <option name="keyValueStorage">
+      <map>
+        <entry key="Common:buildConfiguration" value="Debug" />
+        <entry key="Common:dbContextFolder" value="Context" />
+        <entry key="Common:dbContextName" value="MyDbContext2" />
+        <entry key="Common:generateOnConfiguring" value="false" />
+        <entry key="Common:noBuild" value="false" />
+        <entry key="Common:outputFolder" value="Model" />
+        <entry key="Common:provider" value="Microsoft.EntityFrameworkCore.SqlServer" />
+        <entry key="Common:useAttributes" value="true" />
+        <entry key="Common:useDatabaseNames" value="true" />
+        <entry key="Common:usePluralizer" value="false" />
+      </map>
+    </option>
+  </component>
+</project>
