@@ -1,0 +1,23 @@
+﻿
+
+<h1>Students and Grades by Course</h1>
+
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Grade</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in ViewBag.students)
+    {
+        <tr>
+            <td>@item.student.id</td>
+            <td>@item.student.studentname</td>
+            <td>@item.grade1</td>
+        </tr>
+    }
+    </tbody>
+</table>

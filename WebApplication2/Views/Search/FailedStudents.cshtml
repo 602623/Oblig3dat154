@@ -1,0 +1,23 @@
+﻿
+
+<h1>Students Who Failed and the Courses They Failed In</h1>
+
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Course</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in ViewBag.failed)
+    {
+        <tr>
+            <td>@item.studentid</td>
+            <td>@item.studentname</td>
+            <td>@item.coursename</td>
+        </tr>
+    }
+    </tbody>
+</table>

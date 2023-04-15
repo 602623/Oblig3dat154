@@ -1,0 +1,36 @@
+﻿@{
+    ViewData["Title"] = "Welcome to the Student Database";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<p>Select an option below to search the student database:</p>
+
+<form asp-controller="Search" asp-action="ByName" method="get">
+    <label for="name">Search student by partial name:</label>
+    <input type="text" name="name" required>
+    <button type="submit">Search</button>
+</form>
+
+<form asp-controller="Search" asp-action="ByCourse" method="get">
+    <label for="course">Select a course to view students and their grades:</label>
+    <select name="course" required>
+        <option value="">--Choose a course--</option>
+        @foreach (course course in ViewBag.Courses)
+        {
+            <option value="@course.coursecode">@course.coursename</option>
+        }
+    </select>
+    <button type="submit">Search</button>
+</form>
+
+<form asp-controller="Search" asp-action="ByGrade" method="get">
+    <label for="grade">Show all grades equal to or better than:</label>
+    <input type="text" name="grade" required>
+    <button type="submit">Search</button>
+</form>
+
+<form asp-controller="Search" asp-action="FailedStudents" method="get">
+    <button type="submit">Show students who failed</button>
+</form>
+

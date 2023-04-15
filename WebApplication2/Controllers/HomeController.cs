@@ -1,4 +1,5 @@
 ﻿using System.Diagnostics;
+using System.Diagnostics.CodeAnalysis;
 using Microsoft.AspNetCore.Mvc;
 using WebApplication2.Context;
 using WebApplication2.Models;
@@ -14,6 +15,7 @@ public class HomeController : Controller
         _logger = logger;
     }
 
+    [SuppressMessage("ReSharper.DPA", "DPA0007: Large number of DB records", MessageId = "count: 121")]
     public IActionResult Students(String value)
     {
         using MyDbContext ctx = new();

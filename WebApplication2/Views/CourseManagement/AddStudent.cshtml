@@ -1,0 +1,30 @@
+﻿@{
+    ViewData["Title"] = "Add Student to Course";
+}
+
+<h1>Add Student to Course: @ViewBag.courseCode</h1>
+
+<form asp-action="AddStudent" asp-controller="CourseManagement" method="post">
+    <input 
+        type="hidden"
+        name="coursecode"
+        value="@ViewBag.courseCode"
+        />
+    
+    <div>
+            <label>Student ID:
+            <input type="number" name="studentId" required />
+            </label>
+    </div>
+    
+    <div>
+        <label for="grade">Grade:</label>
+        <input type="text" name="grade" required />
+    </div>
+    
+    <div>
+        <button type="submit">Add Student</button>
+    </div>
+</form>
+
+<a asp-action="CourseDetails" asp-controller="CourseManagement" asp-route-courseCode="@ViewBag.CourseCode">Back to Course Details</a>
