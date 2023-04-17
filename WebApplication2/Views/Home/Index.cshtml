@@ -1,11 +1,28 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Home";
 }
 
-<div class="text-center">
-    <h1 class="display-4">noe</h1>
-    @for (var i = 0; i < 10; i++)
-    {
-        <p>Hei</p>
-    }
-</div>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>@ViewData["Title"] - Student Database</title>
+    <link rel="stylesheet" href="~/css/landing-page.css">
+</head>
+<body>
+<header>
+    <h1>Welcome to the Student Database</h1>
+</header>
+<main>
+    <h2>Functionality:</h2>
+    <ul>
+        <li>Search for a student by entering part of their name</li>
+        <li>Select a course from a list and view all students that took the course, along with their grades</li>
+        <li>Select a grade and view all the grades in the database equal to or better than the selected grade, including the student and the relevant course</li>
+        <li>View a list of all students who failed and the courses they failed in</li>
+        <li>Manage students' participation in a course (i.e., add/remove students from it) with a mandatory grade</li>
+    </ul>
+</main>
+</body>
+</html>

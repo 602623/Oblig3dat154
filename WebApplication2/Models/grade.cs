@@ -21,13 +21,13 @@ public partial class grade
     [Column("grade")]
     [StringLength(1)]
     [Unicode(false)]
-    public string grade1 { get; set; } = null!;
+    public char grade1 { get; set; }
 
     [ForeignKey("coursecode")]
     [InverseProperty("grade")]
     public virtual course coursecodeNavigation { get; set; } = null!;
 
     [ForeignKey("studentid")]
-    [InverseProperty("grade")]
+   [InverseProperty("grade")]
     public virtual student student { get; set; } = null!;
 }

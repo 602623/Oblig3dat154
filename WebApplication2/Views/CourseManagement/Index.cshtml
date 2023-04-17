@@ -1,0 +1,16 @@
+﻿@{
+    ViewData["Title"] = "Welcome to the Student Database";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<p>Select an option below to search the student database:</p>
+@foreach (var course in ViewBag.coursess)
+{
+    
+    <form asp-controller="CourseManagement" asp-action="CourseDetails" method="get">
+        <input name="courseCode" type="hidden" value="@course.coursecode">
+        <button type="submit">@course.coursename</button>
+    </form>
+    
+}

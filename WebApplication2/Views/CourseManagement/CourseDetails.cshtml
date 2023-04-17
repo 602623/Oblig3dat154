@@ -1,0 +1,39 @@
+﻿@using WebApplication2.Models
+@using System.Collections
+
+
+@{
+    ViewData["Title"] = "Course Details";
+    var course = ViewBag.Course as course;
+    
+}
+
+<h1>Course Details: @course.coursecode</h1>
+<h2>@course.coursename</h2>
+
+<table>
+    <thead>
+    <tr>
+        <th>Student ID</th>
+        <th>Student Name</th>
+        <th>Grade</th>
+        <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in ViewBag.Students)
+    {
+        <tr>
+            <td>@item.student.id</td>
+            <td>@item.student.studentname</td>
+            <td>@item.grade1</td>
+            <td>
+                <a asp-action="RemoveStudent" asp-controller="CourseManagement" asp-route-courseCode="@course.coursecode" asp-route-studentId="@item.student.id">Remove Student</a>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>
+<hr/>
+<a asp-action="AddStudent" asp-controller="CourseManagement" asp-route-courseCode="@course.coursecode">Add Student to Course</a> |
+<a asp-action="Index" asp-controller="Search">Back to search</a>
