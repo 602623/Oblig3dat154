@@ -13,14 +13,12 @@ namespace WebApplication2.Controllers
 
         public IActionResult Index()
         {
-            // List all courses
             ViewBag.coursess = _context.course.ToList();
             return View();
         }
 
         public IActionResult CourseDetails(string courseCode)
         {
-            // List all students and their grades for the selected course
             var course = _context.course.FirstOrDefault(c => c.coursecode == courseCode);
             if (course != null)
             {
@@ -41,7 +39,6 @@ namespace WebApplication2.Controllers
 
         public IActionResult AddStudent(string courseCode)
         {
-            // Show a form to add a new student to the course
             ViewBag.courseCode = courseCode;
             return View();
         }
@@ -49,7 +46,6 @@ namespace WebApplication2.Controllers
         [HttpPost]
         public IActionResult AddStudent(string courseCode, int studentId, char grade)
         {
-            // Add the new student to the course with their grade
             Console.WriteLine(courseCode);
             var newGrade = new grade
             {
@@ -69,7 +65,6 @@ namespace WebApplication2.Controllers
 
         public IActionResult RemoveStudent(string courseCode, int studentId)
         {
-            // Remove the student from the course
             var gradeToRemove = _context.grade.Find(courseCode, studentId);
             if (gradeToRemove != null)
             {
@@ -82,7 +77,6 @@ namespace WebApplication2.Controllers
 
         public IActionResult UpdateGrade(string courseCode, int studentId, char newGrade)
         {
-            // Update the student's grade in the course
             var gradeToUpdate = _context.grade.Find(courseCode, studentId);
             if (gradeToUpdate != null)
             {
